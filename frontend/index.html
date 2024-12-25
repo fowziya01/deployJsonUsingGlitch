@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   
+    <input  id="name" type="text" placeholder="ENter Name">
+    <button id="btn">Add User</button>
+    <button id="btn1">Update user id 1</button>
+<button id="btn2">Delete user id 1</button>
+
+    <script>
+        //delete
+        let btn2=document.getElementById("btn2");
+        btn2.addEventListener("click",async function(){
+          
+          console.log("clicked") 
+           try{
+                let res=await fetch("http://localhost:3000/users/1",{
+                 method:"DELETE",
+                
+                })
+                alert("User Deleted")
+            }catch(err){
+                console.log(err)
+            }
+            
+       
+        })
+        //update data-patch
+let btn1= document.getElementById("btn1");
+btn1.addEventListener("click",async function () {
+   try{
+let res= await fetch("http://localhost:3000/users/1",{
+    method:"PATCH",
+    headers:{
+                    "content-type":"application/json"
+                 },
+                 body:JSON.stringify({name:"sumana"}) 
+                })
+
+alert("Data Updated")
+   }catch(err) {
+console.log(err)
+   }
+    
+})
+//post thev data
+        let btn=document.getElementById("btn");
+        btn.addEventListener("click",async function(){
+           let name=document.getElementById("name").value; 
+           try{
+                let res=await fetch("http://localhost:3000/users",{
+                 method:"POST",
+                 headers:{
+                    "content-type":"application/json"
+                 },
+                 body:JSON.stringify({name:"sumana"}) 
+                })
+                console.log("User Added")
+            }catch(err){
+                console.log(err)
+            }
+            
+       
+        })
+       
+        async function getData() {
+            try{
+let res= await fetch("http://localhost:3000/users")
+let data= await res.json()
+console.log(data)
+            }catch(err){
+console.log(err)
+            }
+            
+        }
+        </script>
+    
+</body>
+</html>

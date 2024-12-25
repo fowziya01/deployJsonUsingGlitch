@@ -1,7 +1,7 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "description": "",
+  "description": "This is boilerplate repository, which helps you deploy the Json in the Glitch\r ### Instructions\r - Fork this repository into your Github Account.\r - Rename the repo (if required)\r - Clone it into your local system\r - Install node packages (npm i)\r - Change db.json as per your requirements\r - Start the server, test it by doing some CRUD operations (json-server --watch db.json)\r - If everything is fine, it is ready to deploy on the [Glitch](https://glitch.com/),\r - Add, Commit and Push the code into the Github\r - Signup in the Glitch, \r - Then click on New Project\r - Then click on import from Github\r - Paste your repository there\r - within sometime, you wil get the url link, you can utliize as API link in your projects.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -11,5 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "json-server": "^0.17.2"
-  }
+  },
+  "devDependencies": {},
+  "keywords": []
 }
